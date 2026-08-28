@@ -329,7 +329,7 @@ address {
   min-height: 100dvh;
   display: flex;
   align-items: flex-end;
-  justify-content: flex-start;
+  justify-content: center;
   overflow: hidden;
 }
 
@@ -372,15 +372,22 @@ address {
 .hero__content {
   position: relative;
   z-index: 1;
-  max-width: 620px;
-  padding-top: 0;
-  padding-bottom: 14vh;
-  padding-left: 0;
+  max-width: 720px;
+  padding: 0 0 12vh 0;
   color: #fff;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.hero__content * {
+  text-align: center;
+}
+
+.hero__title {
+  margin-top: 0;
 }
 
 .hero .container {
-  padding-left: 0;
   width: 100%;
 }
 
