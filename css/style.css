@@ -4,28 +4,30 @@
    =========================================== */
 
 :root {
-  /* Cores - substituir pelas cores reais da marca quando disponíveis */
-  --color-bg: #FAFAF8;
+  /* Cores - Identidade Visual SP (manual de marca) */
+  --color-bg: #FFFFFF;
   --color-surface: #FFFFFF;
-  --color-surface-muted: #F5F3EF;
-  --color-text: #1C1C1A;
-  --color-text-muted: #6B6B67;
-  --color-border: #E8E6E2;
-  --color-accent: #1B4B8F;
-  --color-accent-hover: #143A70;
-  --color-accent-light: #E8EEF5;
-  --color-beige: #F2F0EA;
-  --color-overlay: rgba(28, 28, 26, 0.35);
+  --color-surface-muted: #EEF1F2;
+  --color-text: #212121;
+  --color-text-muted: #55606A;
+  --color-border: #E1E5E6;
+  --color-accent: #009EDE;
+  --color-accent-strong: #037EB4;
+  --color-accent-hover: #028EC9;
+  --color-accent-light: #E0F3FB;
+  --color-navy: #0D1D36;
+  --color-navy-2: #0B2D4B;
+  --color-overlay: rgba(13, 29, 54, 0.45);
 
-  /* Tipografia */
-  --font-heading: 'Playfair Display', Georgia, serif;
+  /* Tipografia - Kanit (primária) / Inter (secundária) */
+  --font-heading: 'Kanit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
   /* Tamanhos */
   --container: 1280px;
   --container-narrow: 760px;
-  --radius: 2px;
-  --radius-lg: 4px;
+  --radius: 6px;
+  --radius-lg: 16px;
   --space-xs: 0.5rem;
   --space-sm: 1rem;
   --space-md: 1.5rem;
@@ -107,14 +109,15 @@ address {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: var(--color-accent-strong);
   margin-bottom: var(--space-sm);
 }
 
 .section__title {
   font-family: var(--font-heading);
   font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: -0.01em;
   line-height: 1.15;
   color: var(--color-text);
   margin-bottom: var(--space-sm);
@@ -158,15 +161,15 @@ address {
 }
 
 .btn--secondary {
-  background-color: var(--color-text);
+  background-color: var(--color-navy);
   color: #fff;
-  border-color: var(--color-text);
+  border-color: var(--color-navy);
 }
 
 .btn--secondary:hover,
 .btn--secondary:focus {
-  background-color: #000;
-  border-color: #000;
+  background-color: var(--color-navy-2);
+  border-color: var(--color-navy-2);
   transform: translateY(-1px);
 }
 
@@ -188,14 +191,14 @@ address {
 }
 
 .btn--whatsapp {
-  background-color: rgba(27, 75, 143, 0.72);
-  border-color: rgba(27, 75, 143, 0.35);
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
 }
 
 .btn--whatsapp:hover,
 .btn--whatsapp:focus {
-  background-color: rgba(27, 75, 143, 0.92);
-  border-color: rgba(27, 75, 143, 0.55);
+  background-color: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
 }
 
 .header__cta.btn--whatsapp {
@@ -231,7 +234,7 @@ address {
 }
 
 .header--scrolled {
-  background-color: rgba(28, 28, 26, 0.72);
+  background-color: rgba(13, 29, 54, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom-color: rgba(255, 255, 255, 0.08);
@@ -363,9 +366,9 @@ address {
   inset: 0;
   background: linear-gradient(
     90deg,
-    rgba(28, 28, 26, 0.72) 0%,
-    rgba(28, 28, 26, 0.45) 50%,
-    rgba(28, 28, 26, 0.18) 100%
+    rgba(13, 29, 54, 0.88) 0%,
+    rgba(11, 45, 75, 0.55) 50%,
+    rgba(13, 29, 54, 0.25) 100%
   );
 }
 
@@ -406,9 +409,10 @@ address {
 
 .hero__title {
   font-family: var(--font-heading);
-  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
-  font-weight: 400;
-  line-height: 1.12;
+  font-size: clamp(1.9rem, 4vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
   margin-bottom: var(--space-sm);
   opacity: 0;
   transform: translateY(24px);
@@ -429,7 +433,29 @@ address {
 
 .hero__highlight {
   color: var(--color-accent);
-  font-weight: 500;
+  font-weight: 700;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.9s ease forwards 0.8s;
+}
+
+.btn--outline-light {
+  background-color: transparent;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.65);
+}
+
+.btn--outline-light:hover,
+.btn--outline-light:focus {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: #fff;
 }
 
 /* Trust Strip */
@@ -466,7 +492,7 @@ address {
 .trust__title {
   font-family: var(--font-heading);
   font-size: 1.05rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--color-text);
 }
 
@@ -601,7 +627,7 @@ address {
 
 .category-card__media {
   overflow: hidden;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1 / 1;
 }
 
 .category-card__image {
@@ -622,7 +648,7 @@ address {
 .category-card__title {
   font-family: var(--font-heading);
   font-size: 1.25rem;
-  font-weight: 600;
+  font-weight: 500;
   margin-bottom: 0.35rem;
 }
 
@@ -708,7 +734,7 @@ address {
 .why-card__title {
   font-family: var(--font-heading);
   font-size: 1.15rem;
-  font-weight: 600;
+  font-weight: 500;
   margin-bottom: 0.5rem;
 }
 
@@ -780,7 +806,7 @@ address {
 }
 
 .location__link {
-  color: var(--color-accent);
+  color: var(--color-accent-strong);
   transition: color var(--transition);
 }
 
@@ -801,7 +827,7 @@ address {
 .location__hours-title {
   font-family: var(--font-heading);
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 500;
   margin-bottom: var(--space-sm);
   color: var(--color-text);
 }
@@ -893,7 +919,7 @@ address {
 
 /* CTA Final */
 .cta {
-  background-color: var(--color-text);
+  background: linear-gradient(135deg, var(--color-navy-2) 0%, var(--color-navy) 100%);
   color: #fff;
   text-align: center;
 }
@@ -906,7 +932,8 @@ address {
 .cta__title {
   font-family: var(--font-heading);
   font-size: clamp(2rem, 4vw, 3.25rem);
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: -0.01em;
   line-height: 1.15;
   margin-bottom: var(--space-md);
 }
@@ -950,7 +977,7 @@ address {
 
 /* Footer */
 .footer {
-  background-color: #151514;
+  background-color: var(--color-navy);
   color: rgba(255, 255, 255, 0.7);
   padding-top: var(--space-xl);
 }
@@ -976,7 +1003,7 @@ address {
 .footer__heading {
   font-family: var(--font-heading);
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 500;
   color: #fff;
   margin-bottom: var(--space-md);
 }
@@ -1117,7 +1144,7 @@ address {
     flex-direction: column;
     align-items: flex-start;
     gap: 0;
-    background-color: rgba(28, 28, 26, 0.92);
+    background-color: rgba(13, 29, 54, 0.95);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
