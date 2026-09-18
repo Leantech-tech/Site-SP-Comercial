@@ -1699,14 +1699,47 @@ address {
 
 /* CTA Final */
 .cta {
+  position: relative;
+  overflow: hidden;
   background: linear-gradient(135deg, var(--color-navy-2) 0%, var(--color-navy) 100%);
   color: #fff;
-  text-align: center;
+}
+
+.cta::before,
+.cta::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.cta::before {
+  width: 520px;
+  height: 520px;
+  top: -180px;
+  right: -140px;
+  background: radial-gradient(circle, rgba(0, 158, 222, 0.22) 0%, transparent 70%);
+}
+
+.cta::after {
+  width: 420px;
+  height: 420px;
+  bottom: -200px;
+  left: -140px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.07) 0%, transparent 70%);
 }
 
 .cta__container {
-  max-width: var(--container-narrow);
-  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+.cta__eyebrow {
+  color: rgba(255, 255, 255, 0.65);
 }
 
 .cta__title {
@@ -1722,37 +1755,78 @@ address {
   font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.75);
   margin-bottom: var(--space-lg);
+  max-width: 46ch;
 }
 
-.cta__contacts {
+.cta__cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-sm);
+}
+
+.cta__card {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-xs);
+  padding: var(--space-md);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform var(--transition), background-color var(--transition), border-color var(--transition);
+}
+
+.cta__card:hover,
+.cta__card:focus-visible {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.cta__card:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.cta__card-icon {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem 1rem;
-  margin-top: var(--space-lg);
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.7);
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: rgba(0, 158, 222, 0.18);
+  color: #7ed3f7;
 }
 
-.cta__contact-link {
-  color: rgba(255, 255, 255, 0.9);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  transition: color var(--transition);
+.cta__card-icon svg {
+  width: 20px;
+  height: 20px;
 }
 
-.cta__contact-link:hover,
-.cta__contact-link:focus {
+.cta__card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cta__card-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.cta__card-value {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.35;
   color: #fff;
-}
-
-.cta__contact-separator {
-  opacity: 0.4;
-}
-
-.cta__contact-text {
-  color: rgba(255, 255, 255, 0.7);
 }
 
 /* Footer */
@@ -2114,15 +2188,6 @@ address {
 
   .footer__bottom {
     text-align: center;
-  }
-
-  .cta__contacts {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .cta__contact-separator {
-    display: none;
   }
 }
 
