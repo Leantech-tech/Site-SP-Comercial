@@ -18,16 +18,19 @@
     yearEl.textContent = new Date().getFullYear();
   }
 
-  // Header com sombra ao rolar
+  // Header com sombra ao rolar e contraste com a hero
   function handleScroll() {
-    if (window.scrollY > 20) {
-      header.classList.add('header--scrolled');
-    } else {
-      header.classList.remove('header--scrolled');
-    }
+    const isScrolled = window.scrollY > 20;
+    const heroVisible = hero
+      ? hero.getBoundingClientRect().top < window.innerHeight * 0.85 && hero.getBoundingClientRect().bottom > 0
+      : false;
+
+    header.classList.toggle('header--scrolled', isScrolled);
+    header.classList.toggle('header--hero-active', heroVisible && !isScrolled);
   }
 
   window.addEventListener('scroll', handleScroll, { passive: true });
+  window.addEventListener('resize', handleScroll, { passive: true });
   handleScroll();
 
   // Menu mobile

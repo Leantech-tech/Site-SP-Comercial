@@ -233,6 +233,14 @@ address {
   transition: all var(--transition);
 }
 
+.header--hero-active:not(.header--scrolled) {
+  background-color: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom-color: transparent;
+  box-shadow: none;
+}
+
 .header--scrolled {
   background-color: rgba(5, 29, 50, 0.95);
   backdrop-filter: blur(14px);
@@ -293,6 +301,15 @@ address {
   transition: color var(--transition);
 }
 
+.header--hero-active:not(.header--scrolled) .nav__link {
+  color: rgba(17, 24, 39, 0.9);
+}
+
+.header--hero-active:not(.header--scrolled) .nav__link:hover,
+.header--hero-active:not(.header--scrolled) .nav__link:focus {
+  color: #111827;
+}
+
 .nav__link::after {
   content: '';
   position: absolute;
@@ -340,6 +357,10 @@ address {
   transition: all var(--transition);
 }
 
+.header--hero-active:not(.header--scrolled) .nav__toggle span {
+  background-color: #111827;
+}
+
 /* Header Right (Search & WhatsApp) */
 .header__right {
   display: flex;
@@ -359,6 +380,10 @@ address {
   cursor: pointer;
   opacity: 0.9;
   transition: opacity var(--transition), transform var(--transition);
+}
+
+.header--hero-active:not(.header--scrolled) .header__search-btn {
+  color: #111827;
 }
 
 .header__search-btn:hover {
@@ -384,6 +409,16 @@ address {
   color: #ffffff;
   text-decoration: none;
   transition: opacity var(--transition);
+}
+
+.header--hero-active:not(.header--scrolled) .header__whatsapp {
+  color: #ffffff;
+}
+
+.header--hero-active:not(.header--scrolled) .header__whatsapp-info span:first-child,
+.header--hero-active:not(.header--scrolled) .header__whatsapp-info span:last-child,
+.header--hero-active:not(.header--scrolled) .header__whatsapp-icon {
+  color: #ffffff;
 }
 
 .header__whatsapp:hover {
