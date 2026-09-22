@@ -517,6 +517,20 @@ address {
   z-index: 2;
 }
 
+.hero__logo {
+  display: block;
+  width: auto;
+  max-width: 280px;
+  height: auto;
+  max-height: 110px;
+  object-fit: contain;
+  margin-bottom: 1.75rem;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.35));
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.9s ease forwards 0.2s;
+}
+
 .hero__content {
   position: relative;
   z-index: 2;
@@ -2085,6 +2099,12 @@ address {
       rgba(5, 28, 51, 0.68) 75%,
       rgba(5, 28, 51, 0.55) 100%
     );
+  }
+
+  .hero__logo {
+    max-width: 200px;
+    max-height: 80px;
+    margin-bottom: 1.25rem;
   }
 
   .hero__content {
