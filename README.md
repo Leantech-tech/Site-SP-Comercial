@@ -24,7 +24,6 @@ A proposta comercial previa os seguintes itens para o site institucional:
 | Categorias | Principais categorias de produtos |
 | Produtos | Vídeo dos produtos disponíveis |
 | Sobre | História e diferenciais da empresa |
-| Galeria | Imagens da estrutura da loja |
 | Por que escolher | Diferenciais da SP Comercial |
 | Localização | Endereço, mapa e horário de funcionamento |
 | Informações de atendimento | Horário, telefone e canal WhatsApp |
